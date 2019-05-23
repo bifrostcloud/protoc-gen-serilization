@@ -1,0 +1,12 @@
+{{ define "Method" }}
+{{ $upperCamelCaseServiceName := .UpperCamelCaseServiceName }}
+{{ $upperCamelCaseMethodName := .UpperCamelCaseMethodName }}
+{{ $inputType := .InputType }}
+{{ $inputFields := .InputFields }}
+{{ $outputType := .OutputType }}
+{{ $outputFields := .OutputFields }}
+    {{ template "Serialization" $inputFields }}
+    {{ template "Serialization" $outputFields }}
+{{ end }}
+
+

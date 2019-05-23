@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package example;
+// import "google/protobuf/any.proto";
+service DaemonService {
+  
+    rpc Stop (StopRequest) returns (StopResponse){
+     
+    };
+    rpc Version(VersionRequest)returns (VersionResponse){
+        
+    };
+    rpc DeleteInfo(VersionRequest)returns (VersionRequest){
+       
+    };
+    rpc Configure(VersionRequest)returns (VersionResponse){
+      
+    };
+}
+message StopRequest {
+	string status =1 ; 
+	string message =2; 
+	string some_other =3 ; 
+}
+message StopResponse {
+	string status =1 ; 
+	string message = 2 ; 
+}
+message VersionRequest {
+    string status =1 ; 
+	bool boolean =2;  
+	uint32 integer =3;  
+}
+message VersionResponse {
+	string version = 3 ; 
+}
